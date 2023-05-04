@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#403F50"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/numberBox"
+        style="@style/Box"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="64dp"
+        android:autofillHints=""
+        android:hint="@string/enter_number"
+        android:inputType="textShortMessage"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextFields" />
+
+    <Spinner
+        android:id="@+id/spinnerFrom"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="60dp"
+        android:background="#009688"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/spinnerTo"
+        app:layout_constraintTop_toBottomOf="@id/numberBox" />
+
+    <Spinner
+        android:id="@+id/spinnerTo"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:background="#B52A59"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerFrom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/spinnerFrom"/>
+
+    <TextView
+        android:id="@+id/result"
+        style="@style/Box"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/curved_background"
+        android:hint="@string/result"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/equal" />
+
+    <ImageButton
+        android:id="@+id/equal"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:background="@drawable/curved_background"
+        android:backgroundTint="#649C61"
+        android:src="@drawable/baseline_swap_horiz_24"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerTo"
+        app:layout_constraintBottom_toTopOf="@id/result"
+        android:contentDescription="@string/swap_button" />
+
+    <TextView
+        android:id="@+id/buttonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="@string/convert"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/equal"
+        app:layout_constraintStart_toStartOf="@+id/equal"
+        app:layout_constraintTop_toBottomOf="@+id/equal" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
