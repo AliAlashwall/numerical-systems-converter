@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#403F50"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
     <EditText
@@ -22,6 +22,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/spinnerFrom"
         tools:ignore="TextFields" />
 
     <Spinner
@@ -64,7 +65,7 @@
         android:layout_width="90dp"
         android:layout_height="50dp"
         android:background="@drawable/curved_background"
-        android:backgroundTint="#649C61"
+        android:backgroundTint="#648C61"
         android:src="@drawable/baseline_swap_horiz_24"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"

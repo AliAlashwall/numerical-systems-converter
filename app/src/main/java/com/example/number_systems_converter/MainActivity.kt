@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
             convertNumbers(number)
         }
     }
+    //The arrow will be modified later due to time constraints
     val items1 = listOf("From                     v", "Binary", "Decimal", "Octal", "Hexadecimal")
     val items2 = listOf("To                           v", "Binary", "Decimal", "Octal", "Hexadecimal")
 
