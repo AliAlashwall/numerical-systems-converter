@@ -55,10 +55,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun convertDecimalToBinary(decimalNumber: Int): Int {
-        if (decimalNumber == 0) {
-            Toast.makeText(this@MainActivity, "Please enter number", Toast.LENGTH_SHORT).show()
-            return 0
-        }
         var dNumber = decimalNumber
         var binaryNumber = 0
         var remainder: Int
@@ -72,10 +68,6 @@ class MainActivity : AppCompatActivity() {
         return binaryNumber
     }
     private fun convertBinaryToDecimal(binaryNumber: Int): Int {
-        if (binaryNumber == 0) {
-            Toast.makeText(this@MainActivity, "Please enter number", Toast.LENGTH_SHORT).show()
-            return 0
-        }
         var bNumber = binaryNumber
         var decimalNo = 0
         var power = 0
@@ -147,9 +139,22 @@ class MainActivity : AppCompatActivity() {
         return convertDecimalToHexadecimal(decimalNumber)
     }
 
+    // A function to ensure that the user input a valid value
+    private fun containLetters(n:String):Boolean{
+        return n.any { it.isLetter() }
+    }
+    private fun containsSymbols(str: String): Boolean {
+        val regex = Regex("[^A-Za-z0-9 ]")
+        return regex.containsMatchIn(str)
+    }
+    // hexa(symbols) && binary(0,1)
     private fun convertNumbers(number: String) {
         if(binding.numberBox.text.toString().isEmpty()){
             Toast.makeText(this@MainActivity, "Please enter number", Toast.LENGTH_SHORT).show()
+        }
+        if((before == "Binary" || before == "Decimal" || before == "Octal") && (containLetters(number) || containsSymbols(number)) ){
+            Toast.makeText(this, "This system only allows numbers",Toast.LENGTH_SHORT).show()
+            binding.result.text = ""
         }
         else{
             if(binding.numberBox.text == null){
