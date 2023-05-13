@@ -10,6 +10,12 @@
         <item name="android:textColorHint">@color/white</item>
         <item name="android:gravity">center</item>
     </style>
+    <style name="spinnerStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">8dp</item>
+    </style>
 
     <style name="Theme.Number_Systems_Converter" parent="Base.Theme.Number_Systems_Converter" />
 </resources>

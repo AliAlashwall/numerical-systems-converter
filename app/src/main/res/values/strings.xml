@@ -4,4 +4,6 @@
     <string name="result">Result</string>
     <string name="swap_button">swap button</string>
     <string name="convert">Convert </string>
+    <string name="from_spinner">From</string>
+    <string name="to_spinner">TO</string>
 </resources>

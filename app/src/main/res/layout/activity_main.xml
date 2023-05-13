@@ -14,7 +14,8 @@
         android:layout_width="300dp"
         android:layout_height="150dp"
         android:layout_marginTop="64dp"
-        android:autofillHints=""
+        android:maxLength="15"
+        android:digits="0123456789abcdefABCDEF"
         android:hint="@string/enter_number"
         android:inputType="textShortMessage"
         android:textSize="28sp"
@@ -23,25 +24,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/spinnerFrom"
-        tools:ignore="TextFields" />
+        tools:ignore="TextFields"
+        android:autofillHints="" />
 
-    <Spinner
+    <com.skydoves.powerspinner.PowerSpinnerView
         android:id="@+id/spinnerFrom"
+        style="@style/spinnerStyle"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_marginTop="60dp"
         android:background="#009688"
         android:spinnerMode="dropdown"
+        android:hint="@string/from_spinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/spinnerTo"
         app:layout_constraintTop_toBottomOf="@id/numberBox" />
 
-    <Spinner
+    <com.skydoves.powerspinner.PowerSpinnerView
         android:id="@+id/spinnerTo"
+        style="@style/spinnerStyle"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:background="#B52A59"
         android:spinnerMode="dropdown"
+        android:hint="@string/to_spinner"
         app:layout_constraintEnd_toStartOf="@+id/spinnerFrom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/spinnerFrom"/>
@@ -59,7 +65,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/equal" />
-
     <ImageButton
         android:id="@+id/equal"
         android:layout_width="90dp"
@@ -73,7 +78,6 @@
         app:layout_constraintTop_toBottomOf="@+id/spinnerTo"
         app:layout_constraintBottom_toTopOf="@id/result"
         android:contentDescription="@string/swap_button" />
-
     <TextView
         android:id="@+id/buttonText"
         android:layout_width="wrap_content"
