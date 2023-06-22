@@ -40,37 +40,37 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    private fun convertDecimalToBinary(decimalNumber: Int): Int {
-        return Integer.toBinaryString(decimalNumber).toInt()
+    private fun convertDecimalToBinary(decimalNumber: Long): String {
+        return Integer.toBinaryString(decimalNumber.toInt()).toString()
     }
-    private fun convertBinaryToDecimal(binaryNumber: Int): Int {
-        return Integer.parseInt(binaryNumber.toString(),2)
+    private fun convertBinaryToDecimal(binaryNumber: Long): Long {
+        return Integer.parseInt(binaryNumber.toString(),2).toLong()
     }
     private fun convertHexadecimalToBinary(HexaNumber: String): String {
-        val decimal =convertHexadecimalToDecimal(HexaNumber)
-        return convertDecimalToHexadecimal(decimal)
+        val decimal= convertHexadecimalToDecimal(HexaNumber)
+        return convertDecimalToBinary(decimal)
     }
     private fun convertBinaryToHexadecimal(BinaryNumber: String): String {
-        val decimal =convertBinaryToDecimal(BinaryNumber.toInt())
+        val decimal =convertBinaryToDecimal(BinaryNumber.toLong())
         return convertDecimalToHexadecimal(decimal)
     }
-    private fun convertDecimalToHexadecimal(DecimalNumber: Int): String {
-        return Integer.toHexString(DecimalNumber).uppercase(Locale.ROOT)
+    private fun convertDecimalToHexadecimal(DecimalNumber: Long): String {
+        return Integer.toHexString(DecimalNumber.toInt()).uppercase(Locale.ROOT)
     }
-    private fun convertHexadecimalToDecimal(HexaNumber: String): Int {
-        return Integer.parseInt(HexaNumber,16)
+    private fun convertHexadecimalToDecimal(HexaNumber: String): Long {
+        return Integer.parseInt(HexaNumber,16).toLong()
     }
-    private fun convertDecimalToOctal(DecimalNumber: Int): Long {
-        return Integer.toOctalString(DecimalNumber).toLong()
+    private fun convertDecimalToOctal(DecimalNumber: Long): Long {
+        return Integer.toOctalString(DecimalNumber.toInt()).toLong()
     }
-    private fun convertOctalToDecimal(octalNumber: Long): Int {
-    return Integer.parseInt(octalNumber.toString(),8)
+    private fun convertOctalToDecimal(octalNumber: Long): Long {
+    return Integer.parseInt(octalNumber.toString(),8).toLong()
     }
-    private fun convertOctalToBinary(octalNumber: Long): Int {
+    private fun convertOctalToBinary(octalNumber: Long): String {
         val decimalNumber = convertOctalToDecimal(octalNumber)
         return convertDecimalToBinary(decimalNumber)
     }
-    private fun convertBinaryToOctal(binaryNumber: Int): Long {
+    private fun convertBinaryToOctal(binaryNumber: Long): Long {
         val decimalNumber = convertBinaryToDecimal(binaryNumber)
         return convertDecimalToOctal(decimalNumber)
     }
@@ -94,7 +94,6 @@ class MainActivity : AppCompatActivity() {
         }
         return false
     }
-    // before = after with symbol && binary(0,1)
     private fun convertNumbers(number: String) {
         if (checkInput(before, number)) {
             binding.result.text = ""
@@ -111,12 +110,12 @@ class MainActivity : AppCompatActivity() {
                 ).show()
             }
             if (before == "Binary" && after == "Decimal") {
-                val result = convertBinaryToDecimal(number.toInt())
+                val result = convertBinaryToDecimal(number.toLong())
                 binding.result.text = result.toString()
             }
             if (before == "Decimal" && after == "Binary") {
-                val result = convertDecimalToBinary(number.toInt())
-                binding.result.text = result.toString()
+                val result = convertDecimalToBinary(number.toLong())
+                binding.result.text = result
             }
             if (before == "Hexadecimal" && after == "Binary") {
                 val result = convertHexadecimalToBinary(number)
@@ -131,11 +130,11 @@ class MainActivity : AppCompatActivity() {
                 binding.result.text = result.toString()
             }
             if (before == "Decimal" && after == "Hexadecimal") {
-                val result = convertDecimalToHexadecimal(number.toInt())
+                val result = convertDecimalToHexadecimal(number.toLong())
                 binding.result.text = result
             }
             if (before == "Decimal" && after == "Octal") {
-                val result = convertDecimalToOctal(number.toInt())
+                val result = convertDecimalToOctal(number.toLong())
                 binding.result.text = result.toString()
             }
             if (before == "Octal" && after == "Decimal") {
@@ -144,10 +143,10 @@ class MainActivity : AppCompatActivity() {
             }
             if (before == "Octal" && after == "Binary") {
                 val result = convertOctalToBinary(number.toLong())
-                binding.result.text = result.toString()
+                binding.result.text = result
             }
             if (before == "Binary" && after == "Octal") {
-                val result = convertBinaryToOctal(number.toInt())
+                val result = convertBinaryToOctal(number.toLong())
                 binding.result.text = result.toString()
             }
             if (before == "Hexadecimal" && after == "Octal") {

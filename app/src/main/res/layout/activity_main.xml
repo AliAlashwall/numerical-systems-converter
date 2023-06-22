@@ -14,7 +14,7 @@
         android:layout_width="300dp"
         android:layout_height="150dp"
         android:layout_marginTop="64dp"
-        android:maxLength="15"
+        android:maxLength="10"
         android:digits="0123456789abcdefABCDEF"
         android:hint="@string/enter_number"
         android:inputType="textShortMessage"
