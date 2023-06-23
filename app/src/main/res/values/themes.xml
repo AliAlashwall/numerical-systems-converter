@@ -1,8 +1,5 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<resources >
     <style name="Base.Theme.Number_Systems_Converter" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
     <style name="Box">
@@ -13,6 +10,7 @@
     <style name="spinnerStyle">
         <item name="android:textColor">@color/white</item>
         <item name="android:textColorHint">@color/white</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:padding">8dp</item>
     </style>
