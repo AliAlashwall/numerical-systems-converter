@@ -94,7 +94,18 @@ class MainActivity : AppCompatActivity() {
         }
         return false
     }
+    private var result : String? = null
+        set(value) {
+            field = if (value!!.length < 20)
+            {
+                value
+            }
+            else {
+                Toast.makeText(this@MainActivity, "Please enter a lower number", Toast.LENGTH_SHORT).show()
+                return }
+        }
     private fun convertNumbers(number: String) {
+
         if (checkInput(before, number)) {
             binding.result.text = ""
         }
@@ -110,51 +121,51 @@ class MainActivity : AppCompatActivity() {
                 ).show()
             }
             if (before == "Binary" && after == "Decimal") {
-                val result = convertBinaryToDecimal(number.toLong())
+                result = convertBinaryToDecimal(number.toLong()).toString()
                 binding.result.text = result.toString()
             }
             if (before == "Decimal" && after == "Binary") {
-                val result = convertDecimalToBinary(number.toLong())
+                result = convertDecimalToBinary(number.toLong())
                 binding.result.text = result
             }
             if (before == "Hexadecimal" && after == "Binary") {
-                val result = convertHexadecimalToBinary(number)
+                result = convertHexadecimalToBinary(number)
                 binding.result.text = result
             }
             if (before == "Binary" && after == "Hexadecimal") {
-                val result = convertBinaryToHexadecimal(number)
+                result = convertBinaryToHexadecimal(number)
                 binding.result.text = result
             }
             if (before == "Hexadecimal" && after == "Decimal") {
-                val result = convertHexadecimalToDecimal(number)
-                binding.result.text = result.toString()
+                result = convertHexadecimalToDecimal(number).toString()
+                binding.result.text = result
             }
             if (before == "Decimal" && after == "Hexadecimal") {
-                val result = convertDecimalToHexadecimal(number.toLong())
+                result = convertDecimalToHexadecimal(number.toLong())
                 binding.result.text = result
             }
             if (before == "Decimal" && after == "Octal") {
-                val result = convertDecimalToOctal(number.toLong())
-                binding.result.text = result.toString()
+                result = convertDecimalToOctal(number.toLong()).toString()
+                binding.result.text = result
             }
             if (before == "Octal" && after == "Decimal") {
-                val result = convertOctalToDecimal(number.toLong())
-                binding.result.text = result.toString()
+                result = convertOctalToDecimal(number.toLong()).toString()
+                binding.result.text = result
             }
             if (before == "Octal" && after == "Binary") {
-                val result = convertOctalToBinary(number.toLong())
+                result = convertOctalToBinary(number.toLong())
                 binding.result.text = result
             }
             if (before == "Binary" && after == "Octal") {
-                val result = convertBinaryToOctal(number.toLong())
-                binding.result.text = result.toString()
+                result = convertBinaryToOctal(number.toLong()).toString()
+                binding.result.text = result
             }
             if (before == "Hexadecimal" && after == "Octal") {
-                val result = convertHexadecimalToOctal(number)
-                binding.result.text = result.toString()
+                result = convertHexadecimalToOctal(number).toString()
+                binding.result.text = result
             }
             if (before == "Octal" && after == "Hexadecimal") {
-                val result = convertOctalToHexadecimal(number.toLong())
+                result = convertOctalToHexadecimal(number.toLong())
                 binding.result.text = result
             }
             if (before == after) {
