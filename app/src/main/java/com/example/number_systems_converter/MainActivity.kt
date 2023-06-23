@@ -8,8 +8,8 @@ import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    var before: String? = null
-    var after: String? = null
+    private var before: String? = null
+    private var after: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -46,8 +46,8 @@ class MainActivity : AppCompatActivity() {
     private fun convertBinaryToDecimal(binaryNumber: Long): Long {
         return Integer.parseInt(binaryNumber.toString(),2).toLong()
     }
-    private fun convertHexadecimalToBinary(HexaNumber: String): String {
-        val decimal= convertHexadecimalToDecimal(HexaNumber)
+    private fun convertHexadecimalToBinary(HNumber: String): String {
+        val decimal= convertHexadecimalToDecimal(HNumber)
         return convertDecimalToBinary(decimal)
     }
     private fun convertBinaryToHexadecimal(BinaryNumber: String): String {
@@ -57,8 +57,8 @@ class MainActivity : AppCompatActivity() {
     private fun convertDecimalToHexadecimal(DecimalNumber: Long): String {
         return Integer.toHexString(DecimalNumber.toInt()).uppercase(Locale.ROOT)
     }
-    private fun convertHexadecimalToDecimal(HexaNumber: String): Long {
-        return Integer.parseInt(HexaNumber,16).toLong()
+    private fun convertHexadecimalToDecimal(HNumber: String): Long {
+        return Integer.parseInt(HNumber,16).toLong()
     }
     private fun convertDecimalToOctal(DecimalNumber: Long): Long {
         return Integer.toOctalString(DecimalNumber.toInt()).toLong()
@@ -74,8 +74,8 @@ class MainActivity : AppCompatActivity() {
         val decimalNumber = convertBinaryToDecimal(binaryNumber)
         return convertDecimalToOctal(decimalNumber)
     }
-    private fun convertHexadecimalToOctal(HexaNumber: String): Long {
-        val decimalNumber = convertHexadecimalToDecimal(HexaNumber)
+    private fun convertHexadecimalToOctal(HNumber: String): Long {
+        val decimalNumber = convertHexadecimalToDecimal(HNumber)
         return convertDecimalToOctal(decimalNumber)
     }
     private fun convertOctalToHexadecimal(octalNumber: Long): String {
