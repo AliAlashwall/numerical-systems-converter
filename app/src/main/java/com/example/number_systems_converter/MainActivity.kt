@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity() {
     }
     private var result : String? = null
         set(value) {
-            field = if (value!!.length < 20)
+            field = if (value!!.length in 0..20)
             {
                 value
             }
