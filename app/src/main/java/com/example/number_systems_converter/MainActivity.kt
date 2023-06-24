@@ -122,7 +122,7 @@ class MainActivity : AppCompatActivity() {
             }
             if (before == "Binary" && after == "Decimal") {
                 result = convertBinaryToDecimal(number.toLong()).toString()
-                binding.result.text = result.toString()
+                binding.result.text = result
             }
             if (before == "Decimal" && after == "Binary") {
                 result = convertDecimalToBinary(number.toLong())
